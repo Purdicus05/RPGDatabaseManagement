@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+#  python manage.py inspectdb > RPGApp/models.py
 class players (models.Model):
     player_ID = models.IntegerField(primary_key=True)
     player_firstName = models.CharField(max_length=255)
