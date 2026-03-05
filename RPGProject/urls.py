@@ -22,4 +22,6 @@ from RPGApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('characters/',views.character, name="characters"),
+    path('npc/',views.npc, name="npc"),
 ]
