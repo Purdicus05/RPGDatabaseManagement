@@ -1,0 +1,480 @@
+/* CSS for the main slide-bar - desktop only (Designing for ipads to still use burger icon)*/
+/* sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px */
+
+@media (min-width: 1400px) {
+    .sidebar-desktop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 320px;
+        overflow-y: auto;
+        z-index: 1050;
+    }
+
+    .main_body {
+        margin-left: 320px;
+    }
+
+    .home {
+        font-weight: 400;
+        font-size: large;
+    }
+
+    .home-card {
+        font-weight: 300;
+        font-size: large;
+    }
+    .home-card h5 {
+        font-weight: 600;
+        font-size: x-large;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px){
+    .sidebar-desktop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        overflow-y: auto;
+        z-index: 1050;
+    }
+
+    .main_body {
+        margin-left: 280px;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .sidebar-desktop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 240px;
+        overflow-y: auto;
+        z-index: 1050;
+    }
+
+    .main_body {
+        margin-left: 240px;
+    }
+}
+
+p {
+    font-family: century-gothic;
+}
+
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    overflow-y: auto;
+    z-index: 1050;
+ }
+
+.main_body {
+    background-image: linear-gradient(to right, #fffd, #fffd), url("../images/Background_Alt_1.webp");
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.main_body .student_body_table {
+    height: 90vh;
+}
+
+.image-with-text {
+    width: 75%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-with-text img {
+    max-width: 350px;
+    float: left;
+    margin-right: 20px;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+/* CSS for top Nav Bar */
+.top-nav-bar {
+    position: relative;
+    z-index: 100;
+    background-color: #054676;
+}
+
+/* CSS for the on page buttons */
+
+.button-pa {
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: #054676;
+    padding: 3px 18px 6px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.button-pa:hover {
+    border-radius: 4px;
+    background-color: #1f6495;
+    padding: 3px 19px 6px 19px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.button-pa-update {
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: #0D7605;
+    padding: 3px 12px 6px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: .1rem;
+    transition-duration: 0.2s;
+}
+
+.button-pa-update:hover {
+    border-radius: 4px;
+    background-color: #0b9901;
+    padding: 3px 14px 6px 14px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+
+}
+
+.button-pa-delete {
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: #76050e;
+    padding: 3px 12px 6px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.button-pa-delete:hover {
+    border-radius: 4px;
+    background-color: #a00411;
+    padding: 3px 14px 6px 14px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.button-pa-secondary {
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: #7a7a7a;
+    padding: 5px 12px 0 12px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.button-pa-secondary:hover {
+    border-radius: 4px;
+    background-color: #a5a5a5;
+    padding: 5px 14px 0 14px;
+    color: #ffffff;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+/* CSS for Student Form page */
+.student-form {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pac-form {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.student_body_form form {
+    margin: 0 auto;
+    padding: 25px 35px;
+    border: 2px #054676 solid;
+    border-radius: .8rem 1rem;
+}
+
+.pac_body_form form {
+    margin: 0 auto;
+    padding: 25px 35px;
+    border: 2px #054676 solid;
+    border-radius: .8rem 1rem;
+}
+
+.student_header_form {
+    width: 100%;
+    height: 10%;
+    background-color: #fff8;
+    padding: .8rem 1rem;
+}
+
+.pac_header_form {
+    width: 100%;
+    height: 10%;
+    background-color: #fff8;
+    padding: .8rem 1rem;
+}
+
+.student_body_form {
+    width: 95%;
+    max-height: 90%;
+    background-color: #fffb;
+    border-radius: .6rem;
+    margin: .8rem auto;
+    overflow: auto;
+    min-width: 0;
+}
+
+.pac_body_form {
+    width: 95%;
+    max-height: 90%;
+    background-color: #fffb;
+    border-radius: .6rem;
+    margin: .8rem auto;
+    overflow: auto;
+    min-width: 0;
+}
+
+form .name {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form input {
+    height: 45px;
+    width: 100%;
+}
+
+form select {
+    height: 45px;
+    width: 100%;
+}
+
+/* CSS for Student Record page */
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+td {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    vertical-align: middle;
+}
+
+thead {
+    background-color: #054776;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+thead th {
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr:hover {
+    background-color: rgba(62, 152, 255, 0.183);
+}
+
+.delete-records {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 600px;
+    min-width: 0;
+    min-height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student-records {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 1400px;
+    min-width: 0;
+}
+
+.pac-records {
+    border-radius: .8rem 1rem;
+    background-color: #fff5;
+    box-shadow: 0 5px 15px #0004;
+    overflow: hidden;
+    max-width: 1400px;
+    min-width: 0;
+}
+
+.student_header_table {
+    width: 100%;
+    height: 10%;
+    background-color: #fff8;
+    padding: .8rem 1rem;
+}
+
+.pac_header_table {
+    width: 100%;
+    height: 10%;
+    background-color: #fff8;
+    padding: .8rem 1rem;
+}
+
+.student_body_table {
+    width: 95%;
+    background-color: #fffb;
+    border-radius: .6rem;
+    margin: .8rem auto;
+    overflow: auto;
+    min-width: 0;
+    max-height: 60vh;
+}
+
+.pac_body_table {
+    width: 95%;
+    background-color: #fffb;
+    border-radius: .6rem;
+    margin: .8rem auto;
+    overflow: auto;
+    min-width: 0;
+    max-height: 60vh;
+}
+
+.student_body_table table {
+    min-width: 700px;
+    width: 100%;
+}
+
+.pac_body_table table {
+    min-width: 700px;
+    width: 100%;
+}
+
+.student_body_table th,
+.student_body_table td {
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.pac_body_table th,
+.pac_body_table td {
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.student_body_table th:last-child,
+.student_body_table td:last-child {
+    min-width: 200px;
+}
+
+.pac_body_table th:last-child,
+.pac_body_table td:last-child {
+    min-width: 200px;
+}
+
+.student_body_table::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.pac_body_table::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.student_body_table::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.pac_body_table::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.student_body_table:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    overflow: hidden;
+}
+
+.pac_body_table:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    overflow: hidden;
+}
+
+/* Cards on Home Page */
+.cards-row {
+    background-color: transparent;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-type {
+    background: transparent;
+    border-radius: 4px;
+    padding: 24px 36px 22px;
+    flex: 1 1 260px;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-circle {
+    width: clamp(80px, 10vw, 120px);
+    height: clamp(80px, 10vw, 120px);
+    border-radius: 50%;
+    border: 1px solid #054676;
+    background-color: #054676;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}

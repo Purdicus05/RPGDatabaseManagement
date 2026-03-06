@@ -6,5 +6,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.14 (RPGProject_SE)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="f382cfac43" level="application" />
+    <orderEntry type="library" name="oov2wcw" level="application" />
   </component>
 </module>
