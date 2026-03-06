@@ -83,7 +83,7 @@ p {
  }
 
 .main_body {
-    background-image: linear-gradient(to right, #fffd, #fffd), url("../images/Background_Alt_1.webp");
+    background-color: #a5a5a5;
     background-size: cover;
     min-height: 100vh;
 }
