@@ -12,3 +12,16 @@ def character(request):
 
 def npc(request):
     return render(request, 'npc.html')
+
+def gm_login (request):
+    return render(request, 'gm_login.html')
+
+def player_login (request):
+    return render(request, 'player_login.html')
+
+def player_view(request):
+    return render(request, 'player_view.html')
+
+def gm_view (request):
+    return render(request, 'gm_view.html')
+

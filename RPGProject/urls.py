@@ -18,10 +18,15 @@ from django.contrib import admin
 from django.urls import path
 
 from RPGApp import views
+from RPGApp.views import player_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('characters/',views.character, name="characters"),
     path('npc/',views.npc, name="npc"),
+    path('gm_login/', views.gm_login, name="gm_login"),
+    path('player_login/', player_login, name="player_login"),
+    path('player_view/', views.player_view, name="player_view"),
+    path('gm_view/', views.gm_view, name="gm_view"),
 ]
