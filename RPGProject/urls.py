@@ -29,4 +29,5 @@ urlpatterns = [
     path('player_login/', player_login, name="player_login"),
     path('player_view/', views.player_view, name="player_view"),
     path('gm_view/', views.gm_view, name="gm_view"),
+    path('player_add/', views.player_add, name="player_add"),
 ]

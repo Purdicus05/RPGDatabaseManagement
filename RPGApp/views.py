@@ -25,3 +25,5 @@ def player_view(request):
 def gm_view (request):
     return render(request, 'gm_view.html')
 
+def player_add(request):
+    return render(request, 'player_add.html')
