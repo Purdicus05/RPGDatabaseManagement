@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
-# from .models import *
+from .forms import *
 
 # Create your views here.
 def home (request):
@@ -26,4 +26,11 @@ def gm_view (request):
     return render(request, 'gm_view.html')
 
 def player_add(request):
-    return render(request, 'player_add.html')
+    if request.method == "POST":
+        form = PlayerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("students")
+    else:
+        form = PlayerForm()
+    return render(request, "player_add.html", {"form": form})

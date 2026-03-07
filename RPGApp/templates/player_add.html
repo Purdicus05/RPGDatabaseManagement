@@ -1,19 +1,19 @@
 
 {% extends 'base.html' %}
 
-    {% block title %}PAC Form Page{% endblock %}
-    {% block header %}Welcome to PAC Form Page{% endblock %}
+    {% block title %}Player Form Page{% endblock %}
+    {% block header %}Welcome to Player Form Page{% endblock %}
 
     {% block content %}
     <!-- Insert page contents here -->
     <div class="container mt-4">
-        <div class="pac-form">
+        <div class="Player-form">
 
-            <div class="pac_header_form d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-                <h3 class="mb-0">PAC Record</h3>
+            <div class="Player_header_form d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                <h3 class="mb-0">Player Record</h3>
             </div>
 
-            <div class="pac_body_form mx-auto">
+            <div class="Player_body_form mx-auto">
                 <form method="post" class="container">
                     {% csrf_token %}
 
@@ -36,7 +36,7 @@
                     </div>
 
                     <button type="submit" class="button-pa"
-                        {% if is_edit %}onclick="return confirm('Save changes to this pac record?');"{% endif %}>
+                        {% if is_edit %}onclick="return confirm('Save changes to this Player record?');"{% endif %}>
                         {% if is_edit %}Save Changes{% else %}Submit Form{% endif %}
                     </button>
                 </form>

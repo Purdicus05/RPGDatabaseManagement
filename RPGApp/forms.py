@@ -1,14 +1,11 @@
 from django import forms
-from . import models
-from .models import *
-
+from .models import Players
 
 class PlayerForm(forms.ModelForm):
     class Meta:
-        model = models.Players
-        exclude = ('id',)
-        widgets = {}
-
-
-
-
+        model = Players
+        fields = "__all__"
+        widgets = {
+            "name": forms.TextInput(attrs={"class": "form-control"}),
+            "level": forms.NumberInput(attrs={"class": "form-control"}),
+        }
