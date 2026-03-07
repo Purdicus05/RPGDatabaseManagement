@@ -15,19 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
 
 from RPGApp import views
-from RPGApp.views import player_login
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('characters/',views.character, name="characters"),
-    path('npc/',views.npc, name="npc"),
-    path('gm_login/', views.gm_login, name="gm_login"),
-    path('player_login/', player_login, name="player_login"),
-    path('player_view/', views.player_view, name="player_view"),
-    path('gm_view/', views.gm_view, name="gm_view"),
+    path('home/', views.home, name='home'),
+    path('characters/',views.characters, name="characters"),
+    path('npcs/',views.npcs, name="npc"),
+    path('', auth_views.LoginView.as_view(template_name='login.html'), name="login"),
+    path('players/', views.players, name="players"),
+    path('armour/', views.armour, name="armour"),
+    path('weapons/', views.weapons, name="weapons"),
+    path('spells/', views.spells, name="spells"),
+
     path('player_add/', views.player_add, name="player_add"),
+
 ]

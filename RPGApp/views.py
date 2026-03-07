@@ -2,28 +2,42 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .forms import *
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+@login_required(login_url='/')
+
+
 def home (request):
     return render(request, 'home.html')
 
-def character(request):
+def characters(request):
     return render(request, 'characters.html')
 
-def npc(request):
+def npcs(request):
     return render(request, 'npc.html')
 
-def gm_login (request):
-    return render(request, 'gm_login.html')
+def players(request):
+    return render(request, 'players.html')
 
-def player_login (request):
-    return render(request, 'player_login.html')
+def weapons(request):
+    return render(request, 'weapons.html')
 
-def player_view(request):
-    return render(request, 'player_view.html')
+def armour(request):
+    return render(request, 'armour.html')
 
-def gm_view (request):
-    return render(request, 'gm_view.html')
+def spells(request):
+    return render(request, 'spells.html')
+
+def races(request):
+    return render(request, 'races.html')
+
+def classes(request):
+    return render(request, 'classes.html')
+
+
+
+def login (request):
+    return render(request, 'login.html')
 
 def player_add(request):
     if request.method == "POST":
