@@ -1,12 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
 {% extends 'base.html' %}
-<head>
-    <meta charset="UTF-8">
-    <title>Weapons</title>
-</head>
-<body>
-    <h1>This page works</h1>
-    <h2>NPCs</h2>
-</body>
-</html>
+
+    {% block title %}Weapon Portal{% endblock %}
+    {% block header %}Welcome to the Weapon Portal{% endblock %}
+
+    {% block content %}
+        <!-- Insert page contents here -->
+        <div class="mt-4" style="overflow-x: hidden;">
+
+            <div class="container">
+                <div class="Weapon-records">
+                    <div class="Weapon_header_table d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                        <h3 class="mb-0">Weapon Records</h3>
+                        <a class="button-pa" href="/weapon_add/">+ Add Weapon</a>
+                    </div>
+                <!-- Table record headings  -->
+                    {% if Weapons %}
+                    <div class="Weapon_body_table">
+                        <table class="table-pa align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Damage</th>
+                                    <th>Damage Type</th>
+                                    <th>Weight</th>
+                                    <th class="text-end" style="min-width:250px;">Actions</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                        <!-- Display records in the 'Weapons' database  -->
+                            {% for s in Weapons %}
+                                <tr>
+                                    <td>{{ s.weapon_name }}</td>
+                                    <td>{{ s.weapon_type }}</td>
+                                    <td>{{ s.weapon_damageamount }}</td>
+                                    <td>{{ s.weapon_damagetype }}</td>
+                                    <td>{{ s.weapon_weight }}</td>
+
+                                <!-- Created action buttons  -->
+                                    <td class="text-end">
+                                        <a class="button-pa-update btn-sm" href="{% url 'weapon_update' s.weapon_id %}">
+                                        <i class="fa-solid fa-pen"></i> Update
+                                        </a>
+
+                                        <a class="button-pa-delete btn-sm" href="{% url 'weapon_delete' s.weapon_id %}">
+                                        <i class="fa-solid fa-trash"></i> Delete
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- No records clause  -->
+                    {% else %}
+                        <p class="text-muted mb-0">No Weapons found yet.</p>
+                    {% endif %}
+
+                </div>  
+            </div>
+            <br>
+        </div>
+    {% endblock %}

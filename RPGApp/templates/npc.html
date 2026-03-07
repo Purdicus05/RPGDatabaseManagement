@@ -1,12 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
 {% extends 'base.html' %}
-<head>
-    <meta charset="UTF-8">
-    <title>NPC View</title>
-</head>
-<body>
-    <h1>This page works</h1>
-    <h2>NPCs</h2>
-</body>
-</html>
+
+    {% block title %}NPC Portal{% endblock %}
+    {% block header %}Welcome to the NPC Portal{% endblock %}
+
+    {% block content %}
+        <!-- Insert page contents here -->
+        <div class="mt-4" style="overflow-x: hidden;">
+
+            <div class="container">
+                <div class="NPC-records">
+                    <div class="NPC_header_table d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                        <h3 class="mb-0">NPC Records</h3>
+                        <a class="button-pa" href="/NPC_add/">+ Add NPC</a>
+                    </div>
+                <!-- Table record headings  -->
+                    {% if npcs %}
+                    <div class="NPC_body_table">
+                        <table class="table-pa align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Race</th>
+                                    <th>HP</th>
+                                    <th>AC</th>
+                                    <th>Weapon</th>
+                                    <th>Spell</th>
+
+                                    <th class="text-end" style="min-width:250px;">Actions</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                        <!-- Display records in the 'NPCs' database  -->
+                            {% for s in npcs %}
+                                <tr>
+                                    <td>{{ s.npc_type }}</td>
+                                    <td>{{ s.npc_race }}</td>
+                                    <td>{{ s.npc_hp }}</td>
+                                    <td>{{ s.npc_ac }}</td>
+                                    <td>{{ s.npc_weaponid.weapon_name }}</td>
+                                    <td>{{ s.npc_spellid.spell_name }}</td>
+
+
+                                <!-- Created action buttons  -->
+                                    <td class="text-end" style="min-width: 250px">
+                                        <a class="button-pa-update btn-sm" href="{% url 'npc_update' id=s.npc_id %}">
+                                        <i class="fa-solid fa-pen"></i> Update
+                                        </a>
+
+                                        <a class="button-pa-delete btn-sm" href="{% url 'npc_delete' id=s.npc_id %}">
+                                        <i class="fa-solid fa-trash"></i> Delete
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- No records clause  -->
+                    {% else %}
+                        <p class="text-muted mb-0">No NPCs found yet.</p>
+                    {% endif %}
+
+                </div>  
+            </div>
+            <br>
+        </div>
+    {% endblock %}
