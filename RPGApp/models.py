@@ -18,6 +18,11 @@ class Armour(models.Model):
     class Meta:
         managed = False
         db_table = 'armour'
+        verbose_name_plural = 'Armour'
+        verbose_name = 'Armour'
+
+    def __str__(self):
+        return f'{self.armour_name}'
 
 
 class Characters(models.Model):
@@ -40,6 +45,11 @@ class Characters(models.Model):
     class Meta:
         managed = False
         db_table = 'characters'
+        verbose_name_plural = 'Characters'
+        verbose_name = 'Character'
+
+    def __str__(self):
+        return f'{self.character_name}'
 
 
 class Classes(models.Model):
@@ -55,6 +65,11 @@ class Classes(models.Model):
     class Meta:
         managed = False
         db_table = 'classes'
+        verbose_name_plural = 'Classes'
+        verbose_name = 'Class'
+
+    def __str__(self):
+        return f'{self.class_name}'
 
 
 class Npc(models.Model):
@@ -69,6 +84,11 @@ class Npc(models.Model):
     class Meta:
         managed = False
         db_table = 'npc'
+        verbose_name_plural = 'NPCs'
+        verbose_name = 'NPC'
+
+    def __str__(self):
+        return f'{self.npc_type}'
 
 
 class Players(models.Model):
@@ -81,6 +101,8 @@ class Players(models.Model):
         managed = False
         db_table = 'players'
 
+    def __str__(self):
+        return f'{self.player_username}'
 
 class Races(models.Model):
     race_name = models.CharField(primary_key=True, max_length=32)
@@ -95,6 +117,11 @@ class Races(models.Model):
     class Meta:
         managed = False
         db_table = 'races'
+        verbose_name_plural = 'Races'
+        verbose_name = 'Race'
+
+    def __str__(self):
+        return f'{self.race_name}'
 
 
 class Spells(models.Model):
@@ -108,7 +135,11 @@ class Spells(models.Model):
     class Meta:
         managed = False
         db_table = 'spells'
+        verbose_name_plural = 'Spells'
+        verbose_name = 'Spell'
 
+    def __str__(self):
+        return f'{self.spell_name}'
 
 class Weapons(models.Model):
     weapon_id = models.AutoField(db_column='weapon_ID', primary_key=True)  # Field name made lowercase.
@@ -121,3 +152,8 @@ class Weapons(models.Model):
     class Meta:
         managed = False
         db_table = 'weapons'
+        verbose_name_plural = 'Weapons'
+        verbose_name = 'Weapon'
+
+    def __str__(self):
+        return f'{self.weapon_name}'
