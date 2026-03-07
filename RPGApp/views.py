@@ -30,7 +30,7 @@ def player_add(request):
         form = PlayerForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("students")
+            return redirect("home")
     else:
         form = PlayerForm()
     return render(request, "player_add.html", {"form": form})
