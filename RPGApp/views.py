@@ -1,3 +1,4 @@
+from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
@@ -121,3 +122,8 @@ def race_update(request):
 @login_required(login_url='/')
 def race_add(request):
     return render(request, 'race_add.html')
+
+@login_required(login_url='/')
+def logout_view(request):
+    logout(request)
+    return render(request, 'logout.html')

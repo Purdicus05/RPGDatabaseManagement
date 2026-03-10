@@ -63,4 +63,6 @@ urlpatterns = [
     path('race/delete/<str:id>/',views.race_delete,name="race_delete"),
     path('race_add',views.race_add, name="race_add"),
     path('races/',views.races, name="races"),
+
+    path('logout/',views.logout_view, name="logout"),
 ]
