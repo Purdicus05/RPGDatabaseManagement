@@ -33,6 +33,5 @@ class PlayerForm(forms.ModelForm):
         fields = "__all__"
         widgets = {
             "name": forms.TextInput(attrs={"class": "form-control"}),
-            "level": forms.NumberInput(attrs={"class": "form-control"}),
         }
 
