@@ -41,7 +41,6 @@ def races(request):
 def classes(request):
     class_list = Classes.objects.all().order_by("class_name")
     return render(request, 'classes.html', {'Classes': class_list})
-@login_required(login_url='/')
 
 def login (request):
     return render(request, 'login.html')
