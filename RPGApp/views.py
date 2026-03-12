@@ -6,6 +6,11 @@ from .forms import *
 from .models import *
 from django.contrib.auth.decorators import login_required
 
+
+def login (request):
+    return render(request, 'login.html')
+
+
 @login_required(login_url='/')
 def home (request):
     return render(request, 'home.html')
@@ -42,8 +47,6 @@ def classes(request):
     class_list = Classes.objects.all().order_by("class_name")
     return render(request, 'classes.html', {'Classes': class_list})
 
-def login (request):
-    return render(request, 'login.html')
 @login_required(login_url='/')
 def player_add(request):
     if request.method == "POST":
@@ -70,57 +73,6 @@ def character_delete(request):
 @login_required(login_url='/')
 def character_update(request):
     return render(request, 'character_update.html')
-@login_required(login_url='/')
-def npc_delete(request):
-    return render(request, 'npc_delete.html')
-@login_required(login_url='/')
-def npc_update(request):
-    return render(request, 'npc_update.html')
-@login_required(login_url='/')
-def weapon_delete(request):
-    return render(request, 'weapon_delete.html')
-@login_required(login_url='/')
-def weapon_update(request):
-    return render(request, 'weapon_update.html')
-@login_required(login_url='/')
-def weapon_add(request):
-    return render(request, 'weapon_add.html')
-@login_required(login_url='/')
-def armour_delete(request):
-    return render(request, 'armour_delete.html')
-@login_required(login_url='/')
-def armour_update(request):
-    return render(request, 'armour_update.html')
-@login_required(login_url='/')
-def armour_add(request):
-    return render(request, 'armour_add.html')
-@login_required(login_url='/')
-def spell_delete(request):
-    return render(request, 'spell_delete.html')
-@login_required(login_url='/')
-def spell_update(request):
-    return render(request, 'spell_update.html')
-@login_required(login_url='/')
-def spell_add(request):
-    return render(request, 'spell_add.html')
-@login_required(login_url='/')
-def class_delete(request):
-    return render(request, 'class_delete.html')
-@login_required(login_url='/')
-def class_update(request):
-    return render(request, 'class_update.html')
-@login_required(login_url='/')
-def class_add(request):
-    return render(request, 'class_add.html')
-@login_required(login_url='/')
-def race_delete(request):
-    return render(request, 'race_delete.html')
-@login_required(login_url='/')
-def race_update(request):
-    return render(request, 'race_update.html')
-@login_required(login_url='/')
-def race_add(request):
-    return render(request, 'race_add.html')
 
 @login_required(login_url='/')
 def logout_view(request):
