@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+    {% block title %}Delete Player{% endblock %}
+    {% block header %}Confirm Player Delete Page{% endblock %}
+
+    {% block content %}
+    <div class="delete-records mt-4">
+          <div class="mx-auto container">
+              <p>Are you sure you want to delete Player: <strong>{{ player.player_firstname }} {{ player.player_surname }}</strong>?</p>
+
+              <div class="container-fluid pb-1">
+                <form method="post">
+                    {% csrf_token %}
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="button-pa-delete">Yes, delete</button>
+                            <a href="{% url 'players' %}" class="button-pa-secondary">No, go back</a>
+                        </div>
+                </form>
+              </div>
+          </div>
+    </div>
+    {% endblock %}

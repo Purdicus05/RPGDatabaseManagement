@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+    {% block title %}Delete Character{% endblock %}
+    {% block header %}Confirm Character Delete Page{% endblock %}
+
+    {% block content %}
+    <div class="delete-records mt-4">
+          <div class="mx-auto container">
+              <p>Are you sure you want to delete Character: <strong>{{ character.character_name }}</strong>?</p>
+
+              <div class="container-fluid pb-1">
+                <form method="post">
+                    {% csrf_token %}
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="button-pa-delete">Yes, delete</button>
+                            <a href="{% url 'characters' %}" class="button-pa-secondary">No, go back</a>
+                        </div>
+                </form>
+              </div>
+          </div>
+    </div>
+    {% endblock %}

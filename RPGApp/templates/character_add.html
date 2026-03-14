@@ -36,9 +36,48 @@
 
                     <div class="mb-3">
                         <label class="form-label">Armour</label>
-                        {{ form.character_armourID }}
+                        {{ form.character_armourid }}
                     </div>
-
+                    <div class="mb-3">
+                        <label class="form-label">Weapon</label>
+                        {{ form.character_weaponid }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Spell</label>
+                        {{ form.character_spellid }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">HP</label>
+                        {{ form.character_hitpoints }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Level</label>
+                        {{ form.character_level }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Strength</label>
+                        {{ form.character_strength }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Intelligence</label>
+                        {{ form.character_intelligence }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Dexterity</label>
+                        {{ form.character_dexterity }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Wisdom</label>
+                        {{ form.character_wisdom }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Constitution</label>
+                        {{ form.character_constitution }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Player</label>
+                        {{ form.character_playerid }}
+                    </div>
                     <button type="submit" class="button-pa"
                         {% if is_edit %}onclick="return confirm('Save changes to this Character record?');"{% endif %}>
                         {% if is_edit %}Save Changes{% else %}Submit Form{% endif %}

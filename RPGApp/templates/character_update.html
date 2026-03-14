@@ -1,10 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+{% extends 'base.html' %}
+
+    {% block title %}Character Form Page{% endblock %}
+    {% block header %}Welcome to Character Form Page{% endblock %}
+
+    {% block content %}
+    <!-- Insert page contents here -->
+    <div class="container mt-4">
+        <div class="Player-form">
+
+            <div class="Player_header_form d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                <h3 class="mb-0">Character Record</h3>
+            </div>
+
+            <div class="Player_body_form mx-auto">
+                <form method="post" class="container">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Name</label>
+                            {{ form.character_name }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Class</label>
+                            {{ form.character_class }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Race</label>
+                        {{ form.character_race }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Armour</label>
+                        {{ form.character_armourid }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Weapon</label>
+                        {{ form.character_weaponid }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Spell</label>
+                        {{ form.character_spellid }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">HP</label>
+                        {{ form.character_hitpoints }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Level</label>
+                        {{ form.character_level }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Strength</label>
+                        {{ form.character_strength }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Intelligence</label>
+                        {{ form.character_intelligence }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Dexterity</label>
+                        {{ form.character_dexterity }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Wisdom</label>
+                        {{ form.character_wisdom }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Constitution</label>
+                        {{ form.character_constitution }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Player</label>
+                        {{ form.character_playerid }}
+                    </div>
+                       <button type="submit" class="button-pa" {% if is_edit %}onclick="return confirm('Save changes to this character?');"{% endif %}>
+                           {% if is_edit %}Save Changes{% else %}Submit Form{% endif %}
+                       </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -35,11 +35,10 @@ urlpatterns = [
 
     path('player_add/', views.player_add, name="player_add"),
     path('character_add/', views.character_add, name="character_add"),
-    path('character/update/<int:id>/', views.character_update, name="Character_update"),
-    path('character/delete/<int:id>/', views.character_delete, name="Character_delete"),
-    path('player/update/<int:id>/', views.player_update, name="player_update"),
-    path('player/delete/<int:id>/', views.player_delete, name="player_delete"),
-
+    path('character/update/<int:pk>/', views.character_update, name="Character_update"),
+    path('character/delete/<int:pk>/', views.character_delete, name="Character_delete"),
+    path('player/update/<int:pk>/', views.player_update, name="player_update"),
+    path('player/delete/<int:pk>/', views.player_delete, name="player_delete"),
 
 
     path('races/',views.races, name="races"),

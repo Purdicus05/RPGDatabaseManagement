@@ -1,5 +1,5 @@
 from django.contrib.auth import logout
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from .forms import *
@@ -10,42 +10,57 @@ from django.contrib.auth.decorators import login_required
 def login (request):
     return render(request, 'login.html')
 
+# Base pages
 
 @login_required(login_url='/')
 def home (request):
     return render(request, 'home.html')
+
 @login_required(login_url='/')
 def characters(request):
     character_list = Characters.objects.select_related("character_playerid").all().order_by("character_name")
     return render(request, 'characters.html', {'Characters': character_list})
+
 @login_required(login_url='/')
 def npcs(request):
     npc_list = Npc.objects.select_related('npc_weaponid').select_related('npc_spellid').all().order_by("npc_type")
     return render(request, 'npc.html', {'npcs': npc_list})
+
 @login_required(login_url='/')
 def players(request):
     player_list = Players.objects.all().order_by("player_surname")
     return render(request, 'players.html', {'Players': player_list})
+
 @login_required(login_url='/')
 def weapons(request):
     weapon_list = Weapons.objects.all().order_by("weapon_name")
     return render(request, 'weapons.html', {'Weapons': weapon_list})
+
 @login_required(login_url='/')
 def armour(request):
     armour_list = Armour.objects.all().order_by("armour_name")
     return render(request, 'armour.html', {'Armour': armour_list})
+
 @login_required(login_url='/')
 def spells(request):
     spell_list = Spells.objects.all().order_by("spell_name")
     return render(request, 'spells.html', {'Spells': spell_list})
+
 @login_required(login_url='/')
 def races(request):
     race_list = Races.objects.all().order_by("race_name")
     return render(request, 'races.html', {'Races': race_list})
+
 @login_required(login_url='/')
 def classes(request):
     class_list = Classes.objects.all().order_by("class_name")
     return render(request, 'classes.html', {'Classes': class_list})
+
+@login_required(login_url='/')
+def logout_view(request):
+    logout(request)
+    return render(request, 'logout.html')
+# Form pages
 
 @login_required(login_url='/')
 def player_add(request):
@@ -57,24 +72,54 @@ def player_add(request):
     else:
         form = PlayerForm()
     return render(request, "player_add.html", {"form": form})
+
 @login_required(login_url='/')
-def player_update(request):
-    return render(request, 'player_update.html')
+def player_update(request,pk):
+    player = get_object_or_404(Players, pk=pk)
+    if request.method == "POST":
+        form = PlayerForm(request.POST, instance=player)
+        if form.is_valid():
+            form.save()
+            return redirect("players")
+    else:
+         form = PlayerForm(instance=player)
+    return render(request, "player_update.html", {"form": form})
+
 @login_required(login_url='/')
-def player_delete(request):
-    return render(request, 'player_delete.html')
+def player_delete(request,pk):
+    player = get_object_or_404(Players, pk=pk)
+    if request.method == "POST":
+        player.delete()
+        return redirect("players")
+    return render(request, 'player_delete.html', {"player": player})
+
 @login_required(login_url='/')
 def character_add(request):
+    if request.method == "POST":
+        form = CharacterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("characters")
+    else:
+        form = CharacterForm()
+    return render(request, 'character_add.html', {"form": form})
 
-    return render(request, 'character_add.html')
 @login_required(login_url='/')
-def character_delete(request):
-    return render(request, 'character_delete.html')
-@login_required(login_url='/')
-def character_update(request):
-    return render(request, 'character_update.html')
+def character_delete(request,pk):
+    character = get_object_or_404(Characters, pk=pk)
+    if request.method == "POST":
+        character.delete()
+        return redirect("characters")
+    return render(request, 'character_delete.html', {"character": character})
 
 @login_required(login_url='/')
-def logout_view(request):
-    logout(request)
-    return render(request, 'logout.html')
+def character_update(request,pk):
+    character = get_object_or_404(Characters, pk=pk)
+    if request.method == "POST":
+        form = CharacterForm(request.POST, instance=character)
+        if form.is_valid():
+            form.save()
+            return redirect("characters")
+    else:
+        form = CharacterForm(instance=character)
+    return render(request, 'character_update.html', {"form": form})
