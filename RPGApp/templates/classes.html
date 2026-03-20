@@ -27,7 +27,6 @@
                                     <th>Con Mod</th>
                                     <th>Dex Mod</th>
                                     <th>Str Mod</th>
-                                    <th class="text-end" style="min-width:250px;">Actions</th>
                                 </tr>
                             </thead>
                         <tbody>
@@ -42,18 +41,6 @@
                                     <td>{{ s.class_conmod }}</td>
                                     <td>{{ s.class_dexmod }}</td>
                                     <td>{{ s.class_strmod }}</td>
-
-                                <!-- Created action buttons  -->
-                                    <td class="text-end">
-                                        <a class="button-pa-update btn-sm" href="{% url 'class_update' s.class_name %}">
-                                        <i class="fa-solid fa-pen"></i> Update
-                                        </a>
-
-                                        <a class="button-pa-delete btn-sm" href="{% url 'class_delete' s.class_name %}">
-                                        <i class="fa-solid fa-trash"></i> Delete
-                                        </a>
-
-                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>

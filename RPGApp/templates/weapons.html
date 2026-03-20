@@ -24,7 +24,7 @@
                                     <th>Damage</th>
                                     <th>Damage Type</th>
                                     <th>Weight</th>
-                                    <th class="text-end" style="min-width:250px;">Actions</th>
+
                                 </tr>
                             </thead>
                         <tbody>
@@ -36,18 +36,6 @@
                                     <td>{{ s.weapon_damageamount }}</td>
                                     <td>{{ s.weapon_damagetype }}</td>
                                     <td>{{ s.weapon_weight }}</td>
-
-                                <!-- Created action buttons  -->
-                                    <td class="text-end">
-                                        <a class="button-pa-update btn-sm" href="{% url 'weapon_update' s.weapon_id %}">
-                                        <i class="fa-solid fa-pen"></i> Update
-                                        </a>
-
-                                        <a class="button-pa-delete btn-sm" href="{% url 'weapon_delete' s.weapon_id %}">
-                                        <i class="fa-solid fa-trash"></i> Delete
-                                        </a>
-
-                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>

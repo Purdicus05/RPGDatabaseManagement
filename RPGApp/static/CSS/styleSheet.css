@@ -301,7 +301,7 @@ td {
 }
 
 thead {
-    background-color: #054776;
+    background-color: #5FC5ED;
     position: sticky;
     top: 0;
     left: 0;
@@ -316,7 +316,7 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr:hover {
-    background-color: rgba(62, 152, 255, 0.183);
+    background-color: #5FC5ED;
 }
 
 .delete-records {

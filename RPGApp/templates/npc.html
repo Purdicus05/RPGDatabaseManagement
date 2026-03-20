@@ -25,8 +25,6 @@
                                     <th>AC</th>
                                     <th>Weapon</th>
                                     <th>Spell</th>
-
-                                    <th class="text-end" style="min-width:250px;">Actions</th>
                                 </tr>
                             </thead>
                         <tbody>
@@ -39,19 +37,6 @@
                                     <td>{{ s.npc_ac }}</td>
                                     <td>{{ s.npc_weaponid.weapon_name }}</td>
                                     <td>{{ s.npc_spellid.spell_name }}</td>
-
-
-                                <!-- Created action buttons  -->
-                                    <td class="text-end" style="min-width: 250px">
-                                        <a class="button-pa-update btn-sm" href="{% url 'npc_update' id=s.npc_id %}">
-                                        <i class="fa-solid fa-pen"></i> Update
-                                        </a>
-
-                                        <a class="button-pa-delete btn-sm" href="{% url 'npc_delete' id=s.npc_id %}">
-                                        <i class="fa-solid fa-trash"></i> Delete
-                                        </a>
-
-                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>

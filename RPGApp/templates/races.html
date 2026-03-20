@@ -27,7 +27,7 @@
                                     <th>Con Mod</th>
                                     <th>Dex Mod</th>
                                     <th>Str Mod</th>
-                                    <th class="text-end" style="min-width:250px;">Actions</th>
+
                                 </tr>
                             </thead>
                         <tbody>
@@ -42,18 +42,6 @@
                                     <td>{{ s.race_conmod }}</td>
                                     <td>{{ s.race_dexmod }}</td>
                                     <td>{{ s.race_strmod }}</td>
-
-                                <!-- Created action buttons  -->
-                                    <td class="text-end">
-                                        <a class="button-pa-update btn-sm" href="{% url 'race_update' s.race_name %}">
-                                        <i class="fa-solid fa-pen"></i> Update
-                                        </a>
-
-                                        <a class="button-pa-delete btn-sm" href="{% url 'race_delete' s.race_name %}">
-                                        <i class="fa-solid fa-trash"></i> Delete
-                                        </a>
-
-                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>

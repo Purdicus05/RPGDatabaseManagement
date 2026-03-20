@@ -24,7 +24,7 @@
                                     <th>Damage</th>
                                     <th>Damage Type</th>
                                     <th>Level</th>
-                                    <th class="text-end" style="min-width:250px;">Actions</th>
+
                                 </tr>
                             </thead>
                         <tbody>
@@ -36,18 +36,6 @@
                                     <td>{{ s.spell_damage }}</td>
                                     <td>{{ s.spell_dmgtype }}</td>
                                     <td>{{ s.spell_level }}</td>
-
-                                <!-- Created action buttons  -->
-                                    <td class="text-end">
-                                        <a class="button-pa-update btn-sm" href="{% url 'spell_update' s.spell_id %}">
-                                        <i class="fa-solid fa-pen"></i> Update
-                                        </a>
-
-                                        <a class="button-pa-delete btn-sm" href="{% url 'spell_delete' s.spell_id %}">
-                                        <i class="fa-solid fa-trash"></i> Delete
-                                        </a>
-
-                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>

@@ -23,7 +23,6 @@
                                     <th>Type</th>
                                     <th>Armour Class</th>
                                     <th>Weight</th>
-                                    <th class="text-end" style="min-width:250px;">Actions</th>
                                 </tr>
                             </thead>
                         <tbody>
@@ -34,18 +33,6 @@
                                     <td>{{ s.armour_type }}</td>
                                     <td>{{ s.armour_armourclass }}</td>
                                     <td>{{ s.armour_weight }}</td>
-
-                                <!-- Created action buttons  -->
-                                    <td class="text-end">
-                                        <a class="button-pa-update btn-sm" href="{% url 'armour_update' s.armour_id %}">
-                                        <i class="fa-solid fa-pen"></i> Update
-                                        </a>
-
-                                        <a class="button-pa-delete btn-sm" href="{% url 'armour_delete' s.armour_id %}">
-                                        <i class="fa-solid fa-trash"></i> Delete
-                                        </a>
-
-                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
